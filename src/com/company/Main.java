@@ -22,7 +22,7 @@ public class Main {
             System.out.println("2. Subcadena ");
             System.out.println("3. Comparación de palabras");
             System.out.println("4. comparación de tamaño");
-            System.out.println("0. salir");
+            System.out.println("0. salir"+ "\n" + "\n");
 
 
         try{
@@ -34,6 +34,8 @@ public class Main {
             String cadena;
             String cadena1;
             int subcad;
+            int lon;
+            int alm;
 
             //opciones
             switch (option) {
@@ -43,23 +45,30 @@ public class Main {
                     System.out.println("INGRESE CADENA DE LA QUE DESEA SABER SU TAMAÑO ");
                     cadena = no.nextLine();
                     System.out.println("Cadena Ingresada  - " + cadena + " -");
-                    System.out.println("Tamaño de cadena  " + cadena.length() + " caracteres" + "\n" + "\n");
+                    System.out.println("La cadena tiene " + cadena.length() + " caracteres" + "\n" + "\n");
 
                     break;
                 case 2: // subcadenas
                     System.out.println("SUBCADENAS");
                     System.out.println("Ingrese cadena: ");
                     cadena = no.nextLine();
-                    System.out.println("Ingrese indice inicial: ");
+                    System.out.println("Ingrese indice inicial de la cadena: ");
                     subcad = no.nextInt();
-                    cadena1 = cadena.substring(subcad);
-                    System.out.println("La subcadena es: - " + cadena1 + " -"+ "\n" + "\n");
-
+                    System.out.println("Ingrese el tamaño de la cadena que desea mostrar: ");
+                    lon=no.nextInt();
+                    alm = cadena.length();
+                    if (subcad+lon>alm){
+                        System.out.println("los indices son mas grandes que la cadena ingresada"+ "\n" + "\n");
+                    }
+                    else{
+                        cadena1 = cadena.substring(subcad,subcad+lon);
+                        System.out.println("La subcadena es: - " + cadena1 + " -"+ "\n" + "\n");
+                    }
 
 
                     break;
                 case 3://comparacion de palabras
-                    System.out.println("COMPARACION DE PALABRAS"+"\n");
+                    System.out.println("COMPARACION DE CADENAS"+"\n");
 
                     System.out.println("Ingrese primera cadena ");
                     cadena = no.nextLine();
@@ -68,18 +77,17 @@ public class Main {
                     System.out.println(" Desea Ignorar Mayusculas? ");
                     System.out.println("1. Sí");
                     System.out.println("2. No");
-                    System.out.println("0. volver");
+                    System.out.println("0. volver"+"\n");
                     subcad = no.nextInt();
-//------------------------------validar no IMPORTAN LAS MAYUSCULAS--------------------------------------------
+                    //------------------------validar no IMPORTAN LAS MAYUSCULAS------------------------
                     if (subcad==1){
-
                         if(cadena.equalsIgnoreCase(cadena1)){
                             System.out.println(cadena +"  y  "+ cadena1+"  son iguales "+ "\n" + "\n");
                         }else{
                             System.out.println(cadena +"  y  "+ cadena1+" No son iguales "+ "\n" + "\n");
                         }
-//----------------------------validar si importan las mayusculas---------------------------------------------------
                     }
+                    //----------------------------validar si importan las mayusculas------------------------------
                     else if(subcad==2){
                         if(cadena.equals(cadena1)){
                             System.out.println(cadena +"  y  "+ cadena1+"  son iguales "+ "\n" + "\n");
