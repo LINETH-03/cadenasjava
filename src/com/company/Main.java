@@ -20,7 +20,7 @@ public class Main {
             System.out.println("OPERACIONES CON CADENAS");
             System.out.println("1. Tamaño de cadena ingresada ");
             System.out.println("2. Subcadena ");
-            System.out.println("3. Comparación de palabras");
+            System.out.println("3. Comparación de cadenas");
             System.out.println("4. comparación de tamaño");
             System.out.println("0. salir"+ "\n" + "\n");
 
@@ -102,6 +102,38 @@ public class Main {
 
 
                 case 4: // comparar tamaños de cadenas
+                    System.out.println("COMPARAR TAMAÑO DE CADENAS"+"\n");
+                    System.out.println("Ingrese primera cadena ");
+                    cadena = no.nextLine();
+                    System.out.println("Ingrese segunda cadena  ");
+                    cadena1 = no.nextLine();
+                    System.out.println(" Desea Ignorar los espacios en blanco? ");
+                    System.out.println("1. Sí");
+                    System.out.println("2. No");
+                    System.out.println("0. volver"+"\n");
+                    subcad = no.nextInt();
+                    //----------------mostrara las cadenas sin espacios------------------------
+                    if (subcad==1){
+                        lon=cadena.replace(" ","").length();
+                        alm=cadena1.replace(" ","").length();
+                        if(lon==alm){
+                            System.out.println(cadena +" ("+ lon+") "+"  y  "+ cadena1+" ("+ alm +") "+"  Tienen la misma cantidad de caracteres"+ "\n" + "\n");
+                        }else{
+                            System.out.println(cadena +" ("+ lon+") "+"  y  "+ cadena1+" ("+alm+") "+" No tienen la misma cantidad de caracteres"+ "\n" + "\n");
+                        }
+                    }
+                    //--------------------mostrara las cadenas con  espacios------------------------------
+                    else if(subcad==2){
+
+                        if(cadena.length()==cadena1.length()){
+                            System.out.println(cadena +" ("+ cadena.length() +") " +"  y  "+ cadena1+" ("+ cadena1.length() +") " +"  Tienen la misma cantidad de caracteres con espacios"+ "\n" + "\n");
+                        }else{
+                            System.out.println(cadena + " (" + cadena.length() + ") " + "  y  "+ cadena1+" ("+ cadena1.length() +") " +" NO Tienen la misma cantidad de caracteres con espacios"+ "\n" + "\n");
+                        }
+                    }
+                    else{
+                        System.out.println("volver"+ "\n" + "\n");
+                    }
 
 
 
@@ -118,7 +150,7 @@ public class Main {
             }
 
         }catch (InputMismatchException e) {
-            System.out.println("Debes insertar un Número");
+            System.out.println("Debes insertar un Número"+"\n");
             na.next();
         }
         }
