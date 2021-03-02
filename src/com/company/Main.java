@@ -17,7 +17,7 @@ public class Main {
        while(!salir){
 
             //menu
-            System.out.println("OPERACIONES CON CADENAS");
+            System.out.println("=======OPERACIONES CON CADENAS======="+"\n");
             System.out.println("1. Tamaño de cadena ingresada ");
             System.out.println("2. Subcadena ");
             System.out.println("3. Comparación de cadenas");
@@ -26,7 +26,7 @@ public class Main {
 
 
         try{
-            System.out.println("Seleccione una opción ");
+            System.out.println(" Seleccione una opción ");
             option = na.nextInt();
             //scaner para variables de los case
             Scanner no = new Scanner (System.in);
@@ -42,14 +42,14 @@ public class Main {
 
                 case 1://encontrar el tamaño de una cadena
 
-                    System.out.println("INGRESE CADENA DE LA QUE DESEA SABER SU TAMAÑO ");
+                    System.out.println("=======INGRESE CADENA DE LA QUE DESEA SABER SU TAMAÑO======= ");
                     cadena = no.nextLine();
-                    System.out.println("Cadena Ingresada  - " + cadena + " -");
-                    System.out.println("La cadena tiene " + cadena.length() + " caracteres" + "\n" + "\n");
+                    System.out.println("\n"+"Cadena Ingresada  - " + cadena + " -");
+                    System.out.println("El tamaño de la cadena ingresada es:  " + cadena.length() +  "\n" + "\n");
 
                     break;
                 case 2: // subcadenas
-                    System.out.println("SUBCADENAS");
+                    System.out.println("=======SUBCADENAS=======");
                     System.out.println("Ingrese cadena: ");
                     cadena = no.nextLine();
                     System.out.println("Ingrese indice inicial de la cadena: ");
@@ -68,19 +68,20 @@ public class Main {
 
                     break;
                 case 3://comparacion de palabras
-                    System.out.println("COMPARACION DE CADENAS"+"\n");
+                    System.out.println("=======COMPARACION DE CADENAS======="+"\n");
 
                     System.out.println("Ingrese primera cadena ");
                     cadena = no.nextLine();
                     System.out.println("Ingrese segunda cadena  ");
                     cadena1 = no.nextLine();
-                    System.out.println(" Desea Ignorar Mayusculas? ");
+                    System.out.println("\n"+" Desea Ignorar Mayusculas? ");
                     System.out.println("1. Sí");
                     System.out.println("2. No");
                     System.out.println("0. volver"+"\n");
                     subcad = no.nextInt();
                     //------------------------validar no IMPORTAN LAS MAYUSCULAS------------------------
                     if (subcad==1){
+
                         if(cadena.equalsIgnoreCase(cadena1)){
                             System.out.println(cadena +"  y  "+ cadena1+"  son iguales "+ "\n" + "\n");
                         }else{
@@ -102,12 +103,12 @@ public class Main {
 
 
                 case 4: // comparar tamaños de cadenas
-                    System.out.println("COMPARAR TAMAÑO DE CADENAS"+"\n");
+                    System.out.println("=======COMPARAR TAMAÑO DE CADENAS======="+"\n");
                     System.out.println("Ingrese primera cadena ");
                     cadena = no.nextLine();
                     System.out.println("Ingrese segunda cadena  ");
                     cadena1 = no.nextLine();
-                    System.out.println(" Desea Ignorar los espacios en blanco? ");
+                    System.out.println("\n"+" ¿Desea Ignorar los espacios en blanco? ");
                     System.out.println("1. Sí");
                     System.out.println("2. No");
                     System.out.println("0. volver"+"\n");
@@ -117,9 +118,9 @@ public class Main {
                         lon=cadena.replace(" ","").length();
                         alm=cadena1.replace(" ","").length();
                         if(lon==alm){
-                            System.out.println(cadena +" ("+ lon+") "+"  y  "+ cadena1+" ("+ alm +") "+"  Tienen la misma cantidad de caracteres"+ "\n" + "\n");
+                            System.out.println(cadena +" ("+ lon+") "+"  y  "+ cadena1+" ("+ alm +") "+"  Tienen la misma cantidad de caracteres sin espacios"+ "\n" + "\n");
                         }else{
-                            System.out.println(cadena +" ("+ lon+") "+"  y  "+ cadena1+" ("+alm+") "+" No tienen la misma cantidad de caracteres"+ "\n" + "\n");
+                            System.out.println(cadena +" ("+ lon+") "+"  y  "+ cadena1+" ("+alm+") "+" No tienen la misma cantidad de caracteres sin espacios"+ "\n" + "\n");
                         }
                     }
                     //--------------------mostrara las cadenas con  espacios------------------------------
@@ -134,26 +135,21 @@ public class Main {
                     else{
                         System.out.println("volver"+ "\n" + "\n");
                     }
-
-
-
                     break;
 
-                case 0:
+                case 0://salir
                     System.out.println("created by: "+ "\n"+ "LILY");
                     salir = true;
                     break;
                 default:
 
-                    System.out.println("Números validos 1 - 4 (0 para salir)");
-
+                    System.out.println("\n"+"Números validos 1 - 4 (0 para salir)");
             }
 
         }catch (InputMismatchException e) {
-            System.out.println("Debes insertar un Número"+"\n");
+            System.out.println("\n"+"Debes insertar un Número"+"\n");
             na.next();
         }
         }
-
     }
 }
