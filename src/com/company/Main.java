@@ -41,15 +41,15 @@ public class Main {
             switch (option) {
 
                 case 1://encontrar el tamaño de una cadena
-
-                    System.out.println("=======INGRESE CADENA DE LA QUE DESEA SABER SU TAMAÑO======= ");
+                    System.out.println("AL INGRESAR UNA CADENA DE CARACTERES CONOCERA SU TAMAÑO"+"\n");
+                    System.out.println("Ingrese cadena para saber su tamaño");
                     cadena = no.nextLine();
                     System.out.println("\n"+"Cadena Ingresada  - " + cadena + " -");
                     System.out.println("El tamaño de la cadena ingresada es:  " + cadena.length() +  "\n" + "\n");
-
                     break;
+
                 case 2: // subcadenas
-                    System.out.println("=======SUBCADENAS=======");
+                    System.out.println("=======SUBCADENAS======="+"\n");
                     System.out.println("Ingrese cadena: ");
                     cadena = no.nextLine();
                     System.out.println("Ingrese indice inicial de la cadena: ");
@@ -64,9 +64,8 @@ public class Main {
                         cadena1 = cadena.substring(subcad,subcad+lon);
                         System.out.println("La subcadena es: - " + cadena1 + " -"+ "\n" + "\n");
                     }
-
-
                     break;
+
                 case 3://comparacion de palabras
                     System.out.println("=======COMPARACION DE CADENAS======="+"\n");
 
